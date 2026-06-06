@@ -251,8 +251,34 @@
   .cta-heading span { color:var(--hot); }
   .cta-sub { font-family:'Playfair Display',serif; font-style:italic; font-size:18px; color:var(--dim); margin-bottom:48px; }
 
-  /* BUTTON */
-  .btn-main {
+  /* BUTTON PAIR */
+  .btn-pair { display:flex; gap:14px; flex-wrap:wrap; }
+  .btn-icon {
+    display:inline-flex; align-items:center; gap:10px;
+    background: transparent;
+    border: 1.5px solid rgba(245,236,215,0.25);
+    color: var(--cream);
+    font-family:'Inconsolata',monospace; font-size:13px;
+    font-weight:700; letter-spacing:.12em; text-transform:uppercase;
+    text-decoration:none; padding:14px 24px; border-radius:2px;
+    position:relative; transition: border-color .2s, color .2s, background .2s;
+    overflow:hidden;
+  }
+  .btn-icon::before {
+    content: attr(data-label);
+    position:absolute; inset:0;
+    background: rgba(255,45,107,0.92);
+    color: var(--dark);
+    font-family:'Abril Fatface',serif; font-size:16px; letter-spacing:.1em;
+    display:flex; align-items:center; justify-content:center;
+    opacity:0; transition:opacity .2s ease;
+  }
+  .btn-icon:hover { border-color: var(--hot); }
+  .btn-icon:hover::before { opacity:1; }
+  .btn-icon--hot { border-color: rgba(255,45,107,0.4); color: var(--hot); }
+  .btn-icon--hot:hover { background: var(--hot); color: var(--dark); border-color: var(--hot); }
+
+
     display:inline-block; background:var(--hot); color:var(--dark);
     font-family:'Abril Fatface',serif; font-size:18px; letter-spacing:.06em;
     text-decoration:none; padding:18px 60px; border-radius:2px; text-transform:uppercase;
@@ -329,34 +355,40 @@
     <h1 class="hero-name">hef<span>a</span>ni</h1>
     <p class="hero-aka">stefani mae, actually.</p>
     <p class="hero-tagline">
-      mena arkansas → <em>tampa life</em><br>
-      19. redhead. total disaster in the best way.<br>
+      19. <em>redhead baddie.</em> main character aura.<br>
+      left the farm. never looked back.<br>
       i made this website btw, u didnt kno im versatile like that
     </p>
     <div class="hero-cta">
-      <a href="https://www.loyalfans.com/stefanimae" target="_blank" rel="noopener" class="btn-main">find me on loyalfans</a>
+      <div class="btn-pair">
+        <a href="https://www.instagram.com/hefanimae" target="_blank" rel="noopener" class="btn-icon" data-label="SFW">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.8"/>
+            <circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.8"/>
+            <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
+          </svg>
+          <span>instagram</span>
+        </a>
+        <a href="https://www.loyalfans.com/stefanimae" target="_blank" rel="noopener" class="btn-icon btn-icon--hot" data-label="18+">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 21C12 21 3 14 3 8.5C3 5.42 5.42 3 8.5 3C10.24 3 11.91 3.81 13 5.08C14.09 3.81 15.76 3 17.5 3C20.58 3 23 5.42 23 8.5C23 14 14 21 12 21Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+          </svg>
+          <span>loyalfans</span>
+        </a>
+      </div>
     </div>
   </div>
   <div class="hero-right">
-    <img src="hef_face.png" alt="hefani" loading="eager">
+    <img src="hef_moto.jpg" alt="hefani" loading="eager" style="object-position: center 20%;">
   </div>
 </section>
 
 <!-- TICKER -->
 <div class="ticker">
   <div class="ticker-inner">
-    <span class="ticker-item">hefani</span><span class="ticker-item">loyalfans</span><span class="ticker-item">tampa life</span><span class="ticker-item">stefani mae</span><span class="ticker-item">subscribe</span>
-    <span class="ticker-item">hefani</span><span class="ticker-item">loyalfans</span><span class="ticker-item">tampa life</span><span class="ticker-item">stefani mae</span><span class="ticker-item">subscribe</span>
-    <span class="ticker-item">hefani</span><span class="ticker-item">loyalfans</span><span class="ticker-item">tampa life</span><span class="ticker-item">stefani mae</span><span class="ticker-item">subscribe</span>
-  </div>
-</div>
-
-<!-- MOTO BANNER -->
-<div class="moto-banner">
-  <img src="hef_moto.jpg" alt="hefani on a motorcycle">
-  <div class="moto-text">
-    <h2>left the farm<br><span>kept the attitude</span></h2>
-    <p>mena, ar → tampa → wherever's next</p>
+    <span class="ticker-item">total disaster</span><span class="ticker-item">that main character aura</span><span class="ticker-item">fat ass</span><span class="ticker-item">u luv it</span><span class="ticker-item">hefani</span><span class="ticker-item">loyalfans</span>
+    <span class="ticker-item">total disaster</span><span class="ticker-item">that main character aura</span><span class="ticker-item">fat ass</span><span class="ticker-item">u luv it</span><span class="ticker-item">hefani</span><span class="ticker-item">loyalfans</span>
+    <span class="ticker-item">total disaster</span><span class="ticker-item">that main character aura</span><span class="ticker-item">fat ass</span><span class="ticker-item">u luv it</span><span class="ticker-item">hefani</span><span class="ticker-item">loyalfans</span>
   </div>
 </div>
 
@@ -408,6 +440,9 @@
 <section class="insta-section" style="padding-top:80px;">
   <p class="section-label" style="padding-left:0">more of me</p>
   <div class="insta-grid">
+    <a href="https://www.loyalfans.com/stefanimae" target="_blank" rel="noopener">
+      <img src="hef_face.png" alt="hefani">
+    </a>
     <a href="https://www.loyalfans.com/stefanimae" target="_blank" rel="noopener">
       <img src="hef_corn.jpg" alt="hefani">
     </a>
